@@ -1,3 +1,4 @@
+import 'package:demo_ihec/wonder.screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -11,7 +12,11 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: MyProfileScreen(),
+      initialRoute: '/',
+      routes: {
+        '/wonder': (context) => new WonderScreen(),
+        '/': (context) => new MyProfileScreen()
+      },
     );
   }
 }
@@ -51,7 +56,9 @@ class MyProfileScreen extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, "/wonder");
+              },
             )
           ],
         ),
