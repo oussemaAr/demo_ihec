@@ -30,6 +30,12 @@ class MyProfileScreen extends StatelessWidget {
             userAvatar("assets/me.jpg"),
             informationText("Oussema AROUA"),
             informationText("Mobile Developer"),
+            Divider(
+              color: Colors.white,
+              thickness: 3,
+              endIndent: 32,
+              indent: 32,
+            )
           ],
         ),
       ),
