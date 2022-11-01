@@ -35,9 +35,38 @@ class MyProfileScreen extends StatelessWidget {
               thickness: 3,
               endIndent: 32,
               indent: 32,
+            ),
+            informationCard(
+              Icons.phone,
+              "00216 50 000 000",
+            ),
+            informationCard(
+              Icons.email,
+              "oussama.aroua@orange.com",
+            ),
+            OutlinedButton(
+              child: Text(
+                "Let's play a game",
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+              onPressed: () {},
             )
           ],
         ),
+      ),
+    );
+  }
+
+  Widget informationCard(IconData cardIcon, String content) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: ListTile(
+        tileColor: Colors.white,
+        title: Text(content),
+        leading: Icon(cardIcon),
+        trailing: Icon(cardIcon),
       ),
     );
   }
