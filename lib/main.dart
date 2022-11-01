@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(HomeScreen());
@@ -20,16 +21,36 @@ class MyProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Column(
-        children: [
-              CircleAvatar(
-                  backgroundImage: AssetImage("assets/me.jpg") ,
-                  radius: 50,
-                  backgroundColor: Colors.teal.shade50,
-              )
-        ],
+    return Material(
+      color: Colors.teal,
+      child: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            userAvatar("assets/me.jpg"),
+            informationText("Oussema AROUA"),
+            informationText("Mobile Developer"),
+          ],
+        ),
       ),
+    );
+  }
+
+  Widget informationText(String content) {
+    return Text(
+      content,
+      style: GoogleFonts.adventPro(
+        textStyle: TextStyle(fontSize: 46),
+        color: Colors.white,
+      ),
+    );
+  }
+
+  Widget userAvatar(String assetFile) {
+    return CircleAvatar(
+      backgroundImage: AssetImage(assetFile),
+      radius: 50,
+      backgroundColor: Colors.teal.shade50,
     );
   }
 }
